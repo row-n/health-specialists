@@ -1,0 +1,120 @@
+// Colours
+// ----------
+
+// sass-lint:disable no-color-keywords
+$white: #fff;
+$black: #000;
+
+$grey-v-light: lighten($black, 93.5%);
+$grey-light: lighten($black, 46.7%);
+$grey: lighten($black, 33.5%);
+$grey-dark: lighten($black, 20%);;
+$grey-v-dark: lighten($black, 13.5%);;
+
+$blue-v-light: #61d1e8;
+$blue-light: #26c0df;
+$blue: #1990a8;
+$blue-dark: #105d6d;
+$blue-v-dark: #072b32;
+
+$green-v-light: #8fdb8c;
+$green-light: #5dcb58;
+$green: #3aaa35;
+$green-dark: #287625;
+$green-v-dark: #174215;
+// sass-lint:enable no-color-keywords
+
+// Global
+// ---------
+
+$global-font-size: 100%;
+$global-lineheight: 1.5;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-duration: 700ms;
+$global-timing-function: cubic-bezier(.8, 0, .55, .94);
+$body-background: $white;
+$body-font-colour: $black;
+$body-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font-size: $global-font-size;
+$body-font-size-desktop: 18px;
+$body-font-weight: 200;
+$body-border-box: true;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+
+// Base Typography
+// ------------------
+
+$header-font-family: Cambria, Georgia, serif;
+$header-font-weight: 200;
+$header-font-style: normal;
+$font-family-monospace: $font-family-monospace;
+$header-color: $black;
+$header-lineheight: 1.4;
+$header-letter-spacing: .1em;
+$header-margin-bottom: .5rem;
+$h1-font-size: 2.441em;
+$h2-font-size: 1.953em;
+$h3-font-size: 1.563em;
+$h4-font-size: 1.25em;
+$h5-font-size: 1em;
+$h6-font-size: .8em;
+$x-small-font-size: 75%;
+$small-font-size: 87.5%;
+$large-font-size: 112.5%;
+$x-large-font-size: 125%;
+$font-size-min: 16;
+$font-size-max: 18;
+$paragraph-lineheight: 1.6;
+$paragraph-margin-bottom: 1rem;
+$anchor-color: $blue;
+$anchor-color-hover: $blue;
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+$hr-width: 100%;
+$hr-border: .0625em solid $grey;
+$hr-margin: 1.25rem auto;
+$list-lineheight: $paragraph-lineheight;
+$list-margin-bottom: $paragraph-margin-bottom;
+$list-style-type: disc;
+$list-style-position: outside;
+$list-side-margin: 1.25rem;
+$list-nested-side-margin: 1.25rem;
+
+
+// Media Queries
+// ----------------
+
+// Extra small screen / phone
+$screen-xs: 30em; // 480px
+
+// Small screen / tablet
+$screen-sm: 48em; // 768px
+
+// Medium screen / desktop
+$screen-md: 62em; // 992px
+
+// Large screen / wide desktop
+$screen-lg: 75em; // 1200px
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm - 1);
+$screen-sm-max: ($screen-md - 1);
+$screen-md-max: ($screen-lg - 1);
+
+$phone: 'only screen and (max-width: #{$screen-xs - 1})'; //- 480px
+$mobile: 'only screen and (min-width: #{$screen-xs})'; //480px
+$tablet: 'only screen and (min-width: #{$screen-sm})'; //768px
+$desktop: 'only screen and (min-width: #{$screen-md})'; //992px
+$screen: 'only screen and (min-width: #{$screen-lg})'; //1200px
+
+// Z-index
+// ----------
+
+$brand-zindex: 40;
+$hamburger-zindex: $brand-zindex;
+$site-header-zindex: 30;
+$menu-zindex: 20;
+$footer-zindex: 0;
+$backtotop-zindex: $menu-zindex;

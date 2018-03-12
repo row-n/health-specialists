@@ -1,0 +1,38 @@
+* {
+  &,
+  &:before,
+  &:after {
+    @if ($body-border-box) {
+      box-sizing: border-box;
+    }
+  }
+}
+
+:root {
+  font-size: $body-font-size;
+}
+
+@media (min-width: #{$screen-xs}) and (max-width: #{$screen-md}) {
+  :root {
+    font-size: calc(#{$font-size-min}px + (#{$font-size-max} - #{$font-size-min}) * ( (100vw - #{$screen-xs}) / (992 - 480) ));
+  }
+}
+
+@media #{$desktop} {
+  :root {
+    font-size: $body-font-size-desktop;
+  }
+}
+
+html {
+  background-color: $body-background;
+  height: 100%;
+}
+
+body {
+  background-color: $body-background;
+  color: $body-font-colour;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  line-height: $global-lineheight;
+}
