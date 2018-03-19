@@ -5,7 +5,8 @@
   "main": "gulpfile.babel.js",
   "dependencies": {
     "jquery": "^3.3.1",
-    "skrollr": "^0.6.26"
+    "skrollr": "^0.6.26",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
