@@ -1,0 +1,14 @@
+.header {
+  @include clearfix;
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  transition: background-color .4s;
+  width: 100%;
+  z-index: $site-header-zindex;
+
+  &:hover,
+  &.header--active {
+    background-color: $white;
+  }
+}

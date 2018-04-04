@@ -19,6 +19,8 @@
     <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://fonts.googleapis.com/css?family=Average+Sans" rel="stylesheet">
+
     <?php wp_head(); ?>
 
     <!-- Google Analytics -->
@@ -38,8 +40,9 @@
         <?php bloginfo( 'name' ); ?>
       </a>
 
-      <nav id="primary-navigation" class="navigation navigation--main" role="navigation">
-      	<?php wp_nav_menu(); ?>
+      <nav id="primary-navigation" class="menu" role="navigation">
+      	<!-- <?php wp_nav_menu(array('container' => 'false', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker())); ?> -->
+        <?php wp_nav_menu(array('container' => 'false', 'menu_class' => 'menu__list')); ?>
       </nav>
 
     	<button type="button" class="trigger" id="trigger">

@@ -1,0 +1,48 @@
+.menu {
+  float: right;
+
+  .menu__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    > .menu__item {
+      display: inline;
+    }
+  }
+
+  .menu__item {
+    list-style: none;
+
+    &:last-child {
+      .menu__link {
+        padding-right: 0;
+      }
+    }
+
+    &.menu__item--active {
+
+    }
+
+    &.menu__item--has-children {
+
+    }
+  }
+
+  .menu__link {
+    color: $grey-dark;
+    font-family: $header-font-family;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $grey-light;
+    }
+  }
+
+  .sub-menu {
+    display: none;
+  }
+}
