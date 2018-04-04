@@ -1,5 +1,8 @@
 @charset 'utf-8';
 
+@import 'slick.scss';
+@import 'slick-theme.scss';
+
 // System
 @import 'system/variables';
 @import 'system/functions';
@@ -13,10 +16,13 @@
 @import 'generic/base';
 
 // Site specific
-@import 'layout/footer';
-@import 'layout/header';
 @import 'layout/loader';
-@import 'layout/main';
+@import 'layout/header';
+@import 'layout/brand';
+@import 'layout/trigger';
 @import 'layout/menu';
+@import 'layout/main';
 @import 'layout/page';
+@import 'layout/carousel';
 @import 'layout/sidebar';
+@import 'layout/footer';

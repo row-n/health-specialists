@@ -8,7 +8,7 @@ const gulp = require('gulp');
 // Load all plugins in 'devDependencies' into the variable $
 const $ = require('gulp-load-plugins')({
   pattern: ['*'],
-  scope: ['devDependencies'],
+  scope: ['dependencies', 'devDependencies'],
 });
 
 const onError = err => console.log(err); // eslint-disable-line no-console
@@ -30,6 +30,7 @@ gulp.task('styles', ['styles:lint'], () => {
   gulp.src('./assets/sass/style.s+(a|c)ss')
     .pipe($.plumber({ errorHandler: onError }))
     .pipe($.sass({
+      includePaths: ['node_modules/slick-carousel/slick/'],
       outputStyle: 'compressed',
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({

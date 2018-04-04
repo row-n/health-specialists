@@ -16,16 +16,17 @@
     $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
     if( $images ): ?>
-      <ul id="carousel" class="carousel">
+      <div id="carousel" class="carousel">
           <?php foreach( $images as $image ): ?>
-              <li class="carousel__slide">
-                <figure class="carousel__item">
-                  <?php echo wp_get_attachment_image( $image['ID'], $size, '', ['class' => 'carousel__image'] ); ?>
-                  <figcaption class="carousel__caption"><?php echo trim($image['caption']); ?></figcaption>
-                </figure>
-              </li>
+            <figure class="carousel__slide">
+              <?php echo wp_get_attachment_image( $image['ID'], $size, '', ['class' => 'carousel__image'] ); ?>
+              <figcaption class="carousel__caption">
+                <h1><?php echo trim($image['title']); ?></h1>
+                <p><?php echo trim($image['caption']); ?></p>
+              </figcaption>
+            </figure>
           <?php endforeach; ?>
-      </ul>
+      </div>
   <?php endif; ?>
 
   </article>

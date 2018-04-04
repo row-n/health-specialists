@@ -3,18 +3,21 @@ import 'slick-carousel';
 import plugin from './plugin';
 
 class Carousel {
-  constructor(element) {
+  constructor(element, options) {
     const $element = $(element);
 
-    console.log($element);
-    console.log('carousel');
-
     $element.slick({
-      infinite: false,
+      arrows: options.arrows,
+      infinite: options.infinite,
+      speed: options.speed,
     });
   }
 }
 
-Carousel.DEFAULTS = {};
+Carousel.DEFAULTS = {
+  arrows: true,
+  infinite: true,
+  speed: 300,
+};
 
 plugin('Carousel', Carousel);

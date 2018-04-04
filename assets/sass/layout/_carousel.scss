@@ -1,0 +1,13 @@
+.carousel {
+  max-height: 100vh;
+
+  .carousel__slide {
+    margin: 0;
+    width: 100%;
+  }
+
+  .carousel__image {
+    height: auto;
+    width: inherit;
+  }
+}
