@@ -1,4 +1,5 @@
 <?php
+include_once 'inc/walker.php';
 
 /*------------------------------------*\
   Theme Support
@@ -28,34 +29,6 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-class Custom_Walker extends Walker_Nav_Menu {
-
-    
-
-}
-
-// Add class to menu items
-function nav_menu_item_class($classes, $item, $args, $depth)
-{
-  for($i = 0; $i < count($classes); $i++){
-    if ($classes[$i] == 'menu-item') {
-      $classes[$i] = 'menu__item';
-    }
-
-    if ($classes[$i] == 'menu-item-has-children') {
-      $classes[$i] = 'menu__item--has-children';
-    }
-
-    if ($classes[$i] == 'current-menu-item') {
-      $classes[$i] = 'menu__item--active';
-    }
-  }
-
-  $new_classes = is_array($classes) ? array_intersect($classes, array('menu__item', 'menu__item--active', 'menu__item--has-children')) : '';
-
-  return $new_classes;
-}
-
 // Add icons to menu items
 function nav_menu_item_icons( $items, $args )
 {
@@ -70,17 +43,6 @@ function nav_menu_item_icons( $items, $args )
   }
 
   return $items;
-}
-
-// Add class to menu link
-function nav_menu_link_atts($atts, $item, $args, $depth)
-{
-  $new_atts = array('class' => 'menu__link');
-  if (isset($atts['href'])) {
-    $new_atts['href'] = $atts['href'];
-  }
-
-  return $new_atts;
 }
 
 // Load scripts (header.php)
@@ -217,9 +179,6 @@ remove_action('wp_print_styles', 'print_emoji_styles'); // Remove emoji styles
 // Add Filters
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
-add_filter('nav_menu_item_id', '__return_empty_string'); // Remove id from nav menu items
-add_filter('nav_menu_css_class', 'nav_menu_item_class', 10, 4); // Add class to menu items
 add_filter('wp_nav_menu_objects', 'nav_menu_item_icons', 10, 2); // Add icons to menu items
-add_filter('nav_menu_link_attributes', 'nav_menu_link_atts', 10, 4); // Add class to menu link
 add_filter('use_default_gallery_style', '__return_false'); // Remove Gallery styles
 add_filter('excerpt_length', 'custom_excerpt_length', 9999); // Limit excerpt length

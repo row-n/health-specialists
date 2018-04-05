@@ -40,9 +40,13 @@
         <?php bloginfo( 'name' ); ?>
       </a>
 
-      <nav id="primary-navigation" class="menu" role="navigation">
-      	<!-- <?php wp_nav_menu(array('container' => 'false', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker())); ?> -->
-        <?php wp_nav_menu(array('container' => 'false', 'menu_class' => 'menu__list')); ?>
+      <nav id="primary-navigation" class="navigation" role="navigation">
+        <ul class="menu menu--level-1">
+          <?php wp_nav_menu(array('container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker(0))); ?>
+       </ul>
+        <ul class="menu menu--level-2">
+          <?php wp_nav_menu(array('container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker(1))); ?>
+        </ul>
       </nav>
 
     	<button type="button" class="trigger" id="trigger">
