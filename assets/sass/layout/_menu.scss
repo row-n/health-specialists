@@ -1,16 +1,48 @@
 .menu {
   float: right;
-  position: relative;
+  // position: relative;
 
   .menu__bottom {
     display: none;
     left: 0;
     position: absolute;
-    top: 60px;
+    top: 4.375em;
     width: 100%;
 
     .header--active & {
       display: block;
+    }
+  }
+
+  .menu__dropdown {
+    box-shadow: 0 .75em 1.25em alpha($black, .08);
+    left: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+
+    &:before {
+      border: .5em solid transparent;
+      border-bottom-color: $white;
+      bottom: 100%;
+      content: '';
+      height: 0;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      right: auto;
+      transform: translateX(-50%);
+      transition: opacity .3s;
+      width: 0;
+
+      .header--active & {
+        opacity: 1;
+      }
+    }
+
+    .header--active & {
+      transition: transform .3s, width .3s, height .3s;
+      visibility: visible;
     }
   }
 
@@ -23,13 +55,19 @@
       > .menu__item {
         display: inline;
       }
+
+      .menu__link {
+        display: inline-block;
+        padding: 1em;
+      }
     }
 
     &.menu__list--level-2 {
-      left: 0;
-      position: absolute;
-      top: 0;
-      visibility: hidden;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      z-index: 1;
     }
   }
 
@@ -54,8 +92,6 @@
   .menu__link {
     color: $grey-dark;
     font-family: $header-font-family;
-    padding-left: 1em;
-    padding-right: 1em;
     text-decoration: none;
 
     &:hover,
@@ -63,25 +99,57 @@
       color: $grey-light;
     }
   }
+
+  .menu__icon {
+    margin-right: 1em;
+    width: 1em;
+  }
 }
 
 .sub-menu {
   left: 0;
+  list-style: none;
   opacity: 0;
+  padding: 1em;
   position: absolute;
   top: 0;
   transition: opacity .3s, visibility .3s;
   visibility: hidden;
   width: 100%;
 
-  &.sub-menu__active {
+  &.is-active {
     opacity: 1;
     visibility: visible;
+  }
+
+  &.sub-menu--move-left {
+    .sub-menu__list {
+      transform: translateX(-100px);
+    }
+  }
+
+  &.sub-menu--move-right {
+    .sub-menu__list {
+      transform: translateX(100px);
+    }
+  }
+
+  .sub-menu__list {
+    @include clearfix;
+    display: block;
+    padding-left: 0;
+    position: relative;
+    width: 18.75em;
+  }
+
+  .sub-menu__item {
+    list-style: none;
   }
 }
 
 .bg-layer {
   background: $white;
+  border-radius: .25em;
   height: 1px;
   left: 0;
   opacity: 0;
@@ -91,7 +159,7 @@
   transition: opacity .3s;
   width: 1px;
 
-  .is-dropdown-visible & {
+  .header--active & {
     opacity: 1;
     transition: transform .3s, opacity .3s;
   }

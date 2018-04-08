@@ -47,10 +47,12 @@
          </ul>
        </div>
        <div class="menu__bottom">
-          <ul class="menu__list menu__list--level-2">
-            <?php wp_nav_menu(array('container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker(1))); ?>
-          </ul>
-          <div class="bg-layer" aria-hidden="true"></div>
+         <div class="menu__dropdown">
+            <ul class="menu__list menu__list--level-2">
+              <?php wp_nav_menu(array('container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker(1))); ?>
+            </ul>
+            <div class="bg-layer" aria-hidden="true"></div>
+          </div>
         </div>
       </nav>
 

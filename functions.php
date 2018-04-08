@@ -37,7 +37,7 @@ function nav_menu_item_icons( $items, $args )
     $icon = get_field('icon', $item);
 
     if( $icon ) {
-      $icon = '<span class="fa ' . $icon . '" data-color="' . $color . '" aria-hidden="true"></span>';
+      $icon = '<span class="menu__icon fa ' . $icon . '" style="color:' . $color . ';" aria-hidden="true"></span>';
       $item->title = $icon . $item->title;
     }
   }

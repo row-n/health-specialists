@@ -10,6 +10,7 @@ class Custom_Walker extends Walker {
   function start_lvl( &$output, $depth = 0, $args = array() ) {
     if ($this->$show_depth - 1 == $depth) {
       $indent = str_repeat("\t", $depth);
+      // $output .= "\n$indent<div class='sub-menu__content'>\n";
       $output .= "\n$indent<ul class='sub-menu__list'>\n";
     }
   }
@@ -17,6 +18,7 @@ class Custom_Walker extends Walker {
   function end_lvl( &$output, $depth = 0, $args = array() ) {
     if ($this->$show_depth - 1 == $depth) {
       $indent = str_repeat("\t", $depth);
+      // $output .= "$indent</div>\n";
       $output .= "$indent</ul>\n";
     }
   }
@@ -43,7 +45,7 @@ class Custom_Walker extends Walker {
     }
 
     /* Check for children */
-    if ($this->has_children($item)) {
+    if ($this->$show_depth == 0 && $this->has_children($item)) {
       $classes[] = 'menu__item--has-children';
     }
 
