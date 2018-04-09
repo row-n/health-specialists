@@ -34,10 +34,11 @@ function nav_menu_item_icons( $items, $args )
 {
   foreach( $items as $key => $item ) {
     $color = get_field('colour', $item);
+    list($r, $g, $b) = sscanf($color, "#%02x%02x%02x");
     $icon = get_field('icon', $item);
 
     if( $icon ) {
-      $icon = '<span class="menu__icon fa ' . $icon . '" style="color:' . $color . ';" aria-hidden="true"></span>';
+      $icon = '<span class="menu__icon fa ' . $icon . '" style="color:' . $color . '; background-color: rgba(' . $r . ',' . $g . ',' . $b . ', .2);" aria-hidden="true"></span>';
       $item->title = $icon . $item->title;
     }
   }

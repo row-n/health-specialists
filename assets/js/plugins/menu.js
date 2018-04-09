@@ -2,46 +2,47 @@ import $ from 'jquery';
 import plugin from './plugin';
 
 class Menu {
-  constructor(element, options) {
+  constructor(element) {
     this.$element = $(element);
     this.$mainNavigation = this.$element.find('.menu__top');
     this.$mainNavigationItems = this.$mainNavigation.find('.menu__item--has-children');
     this.$dropdownList = this.$element.find('.menu__dropdown');
     this.$dropdownWrappers = this.$dropdownList.find('.sub-menu');
     this.$dropdownItems = this.$dropdownList.find('.sub-menu__list');
-    this.$dropdownBg = this.$element.find('.bg-layer');
     this.resizing = false;
 
-    this.bindEvents();
+    this.events();
 
     // on resize, reset dropdown style property
-    // this.updateDropdownPosition();
-    // $(window).on('resize', () => {
-    //   if (!this.resizing) {
-    //     this.resizing = true;
-    //     (!window.requestAnimationFrame) ? setTimeout(this.updateDropdownPosition, 300) : window.requestAnimationFrame(updateDropdownPosition);
-    //   }
-    // });
+    this.updateDropdownPosition();
+    $(window).on('resize', () => {
+      if (!this.resizing) {
+        this.resizing = true;
+        if (!window.requestAnimationFrame) {
+          setTimeout(() => {
+            this.updateDropdownPosition();
+          }, 300);
+        } else {
+          window.requestAnimationFrame(this.updateDropdownPosition());
+        }
+      }
+    });
   }
 
   showDropdown(item) {
     const $selectedDropdown = this.$dropdownList.find(`#${item.data('content')}`);
-    const selectedDropdownHeight = $selectedDropdown.innerHeight();
-    const selectedDropdownWidth = $selectedDropdown.children('.sub-menu__list').innerWidth();
-    const selectedDropdownLeft = item.offset().left +
-      ((item.innerWidth() / 2) - (selectedDropdownWidth / 2));
-
-    console.log(selectedDropdownHeight);
-    console.log(selectedDropdownWidth);
+    const selectedDropdownHeight = $selectedDropdown.outerHeight();
+    const selectedDropdownWidth = $selectedDropdown.children('.sub-menu__list').outerWidth();
+    const selectedDropdownLeft = item.offset().left + ((item.innerWidth() / 2) - (selectedDropdownWidth / 2));
 
     // update dropdown position and size
-    this.updateDropdown($selectedDropdown, parseInt(selectedDropdownHeight, 10), selectedDropdownWidth, parseInt(selectedDropdownLeft, 10));
+    this.updateDropdown($selectedDropdown, parseInt(selectedDropdownHeight, 10), parseInt(selectedDropdownWidth, 10), parseInt(selectedDropdownLeft, 10));
+
     // add active class to the proper dropdown item
     this.$element.find('.is-active').removeClass('is-active');
-    $selectedDropdown.addClass('is-active').removeClass('sub-menu--move-left sub-menu--move-right').prevAll().addClass('sub-menu--move-left')
-      .end()
-      .nextAll()
-      .addClass('sub-menu--move-right');
+    $selectedDropdown.addClass('is-active').removeClass('sub-menu--move-left sub-menu--move-right');
+    $selectedDropdown.prevAll().addClass('sub-menu--move-left');
+    $selectedDropdown.nextAll().addClass('sub-menu--move-right');
     item.addClass('is-active');
     // show the dropdown wrapper if not visible yet
     if (!this.$element.hasClass('header--active')) {
@@ -61,14 +62,6 @@ class Menu {
       width: `${width}px`,
       height: `${height}px`,
     });
-
-    this.$dropdownBg.css({
-      '-moz-transform': `scaleX(${width}) scaleY(${height})`,
-      '-webkit-transform': `scaleX(${width}) scaleY(${height})`,
-      '-ms-transform': `scaleX(${width}) scaleY(${height})`,
-      '-o-transform': `scaleX(${width}) scaleY(${height})`,
-      transform: `scaleX(${width}) scaleY(${height})`,
-    });
   }
 
   hideDropdown() {
@@ -86,7 +79,7 @@ class Menu {
     this.resizing = false;
   }
 
-  bindEvents() {
+  events() {
     // hover over an item in the main navigation
     this.$mainNavigationItems.mouseenter((event) => {
       // hover over one of the nav items -> show dropdown
@@ -94,7 +87,7 @@ class Menu {
     }).mouseleave(() => {
       setTimeout(() => {
         // if not hovering over a nav item or a dropdown -> hide dropdown
-        if (this.$mainNavigation.find('.menu__item--has-children:hover').length === 0 && this.$element.find('.menu__bottom menu__list:hover').length === 0) {
+        if (this.$mainNavigation.find('.menu__item--has-children:hover').length === 0 && this.$element.find('.menu__dropdown:hover').length === 0) {
           this.hideDropdown();
         }
       }, 50);
@@ -104,7 +97,7 @@ class Menu {
     this.$dropdownList.mouseleave(() => {
       setTimeout(() => {
         // if not hovering over a dropdown or a nav item -> hide dropdown
-        if (this.$mainNavigation.find('.menu__item--has-children:hover').length === 0 && this.$element.find('.menu__bottom menu__list:hover').length === 0) {
+        if (this.$mainNavigation.find('.menu__item--has-children:hover').length === 0 && this.$element.find('.menu__dropdown:hover').length === 0) {
           this.hideDropdown();
         }
       }, 50);
@@ -126,8 +119,5 @@ class Menu {
     // });
   }
 }
-
-Menu.DEFAULTS = {
-};
 
 plugin('Menu', Menu);
