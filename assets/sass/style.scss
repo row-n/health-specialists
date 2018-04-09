@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
-@import 'slick.scss';
-@import 'slick-theme.scss';
+@import 'slick.scss'; // sass-lint:disable-line clean-import-paths
+@import 'slick-theme.scss'; // sass-lint:disable-line clean-import-paths
 
 // System
 @import 'system/variables';
