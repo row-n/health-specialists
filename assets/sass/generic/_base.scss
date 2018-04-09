@@ -36,3 +36,9 @@ body {
   font-weight: $body-font-weight;
   line-height: $global-lineheight;
 }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 65em;
+}
