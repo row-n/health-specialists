@@ -46,20 +46,22 @@ $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 // Base Typography
 // ------------------
 
-$header-font-family: 'Average Sans', Cambria, Georgia, serif;
-$header-font-weight: 200;
+$header-font-family: 'Noto Serif', Cambria, Georgia, serif;
+$header-font-family-alt: 'Average Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-weight: 700;
+$header-font-weight-alt: 200;
 $header-font-style: normal;
 $font-family-monospace: $font-family-monospace;
 $header-color: $black;
 $header-lineheight: 1.4;
 $header-letter-spacing: .1em;
-$header-margin-bottom: .5rem;
-$h1-font-size: 2.441em;
-$h2-font-size: 1.953em;
-$h3-font-size: 1.563em;
-$h4-font-size: 1.25em;
+$header-margin-bottom: .5em;
+$h1-font-size: 3.157em;
+$h2-font-size: 2.369em;
+$h3-font-size: 1.777em;
+$h4-font-size: 1.333em;
 $h5-font-size: 1em;
-$h6-font-size: .8em;
+$h6-font-size: .75em;
 $x-small-font-size: 75%;
 $small-font-size: 87.5%;
 $large-font-size: 112.5%;
@@ -108,6 +110,13 @@ $mobile: 'only screen and (min-width: #{$screen-xs})'; //480px
 $tablet: 'only screen and (min-width: #{$screen-sm})'; //768px
 $desktop: 'only screen and (min-width: #{$screen-md})'; //992px
 $screen: 'only screen and (min-width: #{$screen-lg})'; //1200px
+
+// Buttons
+// ----------
+
+$button-font-family: $header-font-family-alt;
+$button-font-size: $h6-font-size;
+$button-letter-spacing: $header-letter-spacing;
 
 // Z-index
 // ----------
