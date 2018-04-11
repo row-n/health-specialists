@@ -8,7 +8,11 @@ class Carousel {
 
     $element.slick({
       arrows: options.arrows,
+      autoplay: options.autoplay,
+      autoplaySpeed: options.autoplaySpeed,
+      fade: options.fade,
       infinite: options.infinite,
+      mobileFirst: options.mobileFirst,
       speed: options.speed,
     });
   }
@@ -16,8 +20,12 @@ class Carousel {
 
 Carousel.DEFAULTS = {
   arrows: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  fade: true,
   infinite: true,
-  speed: 300,
+  mobileFirst: true,
+  speed: 500,
 };
 
 plugin('Carousel', Carousel);

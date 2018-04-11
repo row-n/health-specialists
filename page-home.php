@@ -11,22 +11,32 @@
 
   <?php the_content(); ?>
 
-  <?php
-    $images = get_field('slide_image');
-    $size = 'full'; // (thumbnail, medium, large, full or custom size)
-
-    if( $images ): ?>
-      <div id="carousel" class="carousel">
-          <?php foreach( $images as $image ): ?>
-            <figure class="carousel__slide">
-              <?php echo wp_get_attachment_image( $image['ID'], $size, '', ['class' => 'carousel__image'] ); ?>
-              <figcaption class="carousel__caption">
-                <h1><?php echo trim($image['title']); ?></h1>
-                <p><?php echo trim($image['caption']); ?></p>
-              </figcaption>
-            </figure>
-          <?php endforeach; ?>
-      </div>
+  <?php if( have_rows('slide') ): ?>
+    <div id="carousel">
+      <?php while( have_rows('slide') ): the_row();
+        $image = get_sub_field('image');
+        $heading = get_sub_field('heading');
+        $subheading = get_sub_field('sub_heading');
+        $link = get_sub_field('link'); ?>
+        <div class="slick-item" style="background-image: url(<?php echo $image['url']; ?>);">
+          <div class="slick-content container">
+            <div class="slick-caption">
+              <?php if($heading): ?>
+                <h1><?php echo trim($heading); ?></h1>
+              <?php endif; ?>
+              <?php if($subheading): ?>
+                <h3><?php echo trim($subheading); ?></h3>
+              <?php endif; ?>
+              <?php if($link): ?>
+                <div class="slick-button">
+                  <a href="<?php echo $link['url']; ?>" class="button button--primary" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+                </div>
+              <?php endif; ?>
+            </div>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    </div>
   <?php endif; ?>
 
   </article>

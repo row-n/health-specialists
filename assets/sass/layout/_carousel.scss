@@ -1,13 +1,58 @@
-.carousel {
+.slick-slider {
   max-height: 100vh;
 
-  .carousel__slide {
+  .slick-item {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
     margin: 0;
+    overflow: hidden;
     width: 100%;
+    z-index: 0;
   }
 
-  .carousel__image {
-    height: auto;
-    width: inherit;
+  .slick-active {
+    .slick-caption {
+      > * {
+        animation-name: slide-in-up;
+        opacity: 1;
+      }
+    }
+  }
+
+  .slick-content {
+    display: flex;
+    height: 100%;
+  }
+
+  .slick-caption {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 37.5em;
+
+    h1 {
+      animation-delay: .2s;
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    h3 {
+      animation-delay: .4s;
+    }
+
+    .slick-button {
+      animation-delay: .6s;
+      margin-top: 1em;
+    }
+
+    > * {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      color: $white;
+      opacity: 0;
+    }
   }
 }
