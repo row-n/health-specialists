@@ -1,0 +1,32 @@
+.social {
+  margin: 0;
+  padding-left: 0;
+
+  .social__item {
+    float: left;
+    list-style: none;
+
+    &:first-child {
+      .social__link {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .social__link {
+    margin-left: 1em;
+
+    &:hover {
+      .social__icon {
+        fill: $grey-v-light;
+      }
+    }
+  }
+
+  .social__icon {
+    fill: $grey-light;
+    height: 1.5em;
+    transition: fill .3s ease;
+    width: 1.5em;
+  }
+}

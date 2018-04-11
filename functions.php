@@ -23,7 +23,8 @@ function shapeSpace_setup()
 function register_my_menus() {
   register_nav_menus(
     array(
-      'primary' => __( 'Primary' )
+      'primary' => __( 'Primary', 'healthspecialists' ),
+      'footer' => __( 'Footer', 'healthspecialists' )
     )
   );
 }
@@ -104,6 +105,22 @@ if (function_exists('register_sidebar'))
     'before_title' => '<h3 class="sidebar__title">',
     'after_title' => '</h3>'
   ));
+
+  register_sidebar(array(
+    'name' => __('Social links', 'healthspecialists'),
+    'description' => __('Widgets added here are displayed in the footer social area', 'healthspecialists'),
+    'id' => 'social',
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="sidebar__title">',
+    'after_title' => '</h3>'
+  ));
+}
+
+// Register all custom widgets
+require_once('widgets/social-links.php');
+function register_widgets() {
+  register_widget('social_links');
 }
 
 // Remove wp_head() injected Recent Comment styles
@@ -156,6 +173,7 @@ function wordpress_hide_feature_image($html, $post_id, $post_image_id)
 add_action('init', 'header_scripts'); // Add Custom Scripts to wp_head()
 add_action('wp_enqueue_scripts', 'footer_scripts'); // Add Custom Scripts to wp_footer()
 add_action('wp_enqueue_scripts', 'styles'); // Add Theme Stylesheet
+add_action('widgets_init', 'register_widgets'); // Register custom widgets
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('after_setup_theme', 'shapeSpace_setup'); // Add theme support setup
 
