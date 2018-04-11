@@ -109,13 +109,13 @@
         <nav id="primary-navigation" class="menu" role="navigation">
           <div class="menu__top">
             <ul class="menu__list menu__list--level-1">
-              <?php wp_nav_menu(array('container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker(0))); ?>
+              <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Main_Walker(0))); ?>
            </ul>
          </div>
          <div class="menu__bottom">
            <div class="menu__dropdown">
               <ul class="menu__list menu__list--level-2">
-                <?php wp_nav_menu(array('container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Walker(1))); ?>
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'items_wrap' => '%3$s', 'menu_class' => 'menu__list', 'walker' => new Custom_Main_Walker(1))); ?>
               </ul>
             </div>
           </div>
