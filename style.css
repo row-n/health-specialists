@@ -907,10 +907,6 @@ body {
   clear: both;
 }
 
-.footer h3 {
-  display: none;
-}
-
 .footer .footer__row {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -14,14 +14,12 @@
     }
 
     public function widget( $args, $instance ) {
-      $title = apply_filters( 'widget_title', $instance[ 'title' ] );
       $facebook = apply_filters( 'widget_title', $instance[ 'facebook' ] );
       $instagram = apply_filters( 'widget_title', $instance[ 'instagram' ] );
       $twitter = apply_filters( 'widget_title', $instance[ 'twitter' ] );
       $pinterest = apply_filters( 'widget_title', $instance[ 'pinterest' ] );
 
       echo $args['before_widget'];
-      echo $args['before_title'] . $title . $args['after_title'];
       ?>
       <ul class="social">
         <?php if($facebook): ?>
@@ -72,15 +70,10 @@
     }
 
     public function form( $instance ) {
-      $title = ! empty( $instance['title'] ) ? $instance['title'] : '';
       $facebook = ! empty( $instance['facebook'] ) ? $instance['facebook'] : '';
       $instagram = ! empty( $instance['instagram'] ) ? $instance['instagram'] : '';
       $pinterest = ! empty( $instance['pinterest'] ) ? $instance['pinterest'] : '';
       $twitter = ! empty( $instance['twitter'] ) ? $instance['twitter'] : ''; ?>
-      <p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"/>
-      </p>
       <p>
         <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:' ); ?></label>
         <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo esc_attr( $instance['facebook'] ); ?>"/>
@@ -102,7 +95,6 @@
 
     public function update( $new_instance, $old_instance ) {
       $instance = $old_instance;
-      $instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
       $instance[ 'facebook' ] = strip_tags( $new_instance[ 'facebook' ] );
       $instance[ 'instagram' ] = strip_tags( $new_instance[ 'instagram' ] );
       $instance[ 'twitter' ] = strip_tags( $new_instance[ 'twitter' ] );
