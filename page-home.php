@@ -39,6 +39,19 @@
     </div>
   <?php endif; ?>
 
+  <?php if( have_rows('logo') ): ?>
+    <div id="logos" class="logos container">
+      <?php while( have_rows('logo') ): the_row();
+        $image = get_sub_field('image'); ?>
+          <?php if($image): ?>
+            <div class="logos__item">
+              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="logos__image" />
+            </div>
+          <?php endif; ?>
+      <?php endwhile; ?>
+    </div>
+  <?php endif; ?>
+
   </article>
 
   <?php endwhile; ?>
