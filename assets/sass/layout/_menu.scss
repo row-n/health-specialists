@@ -61,7 +61,8 @@
 
       .menu__link {
         align-items: center;
-        color: $white;
+        // color: $white;
+        color: $grey-light;
         display: flex;
         font-size: $large-font-size;
         height: 5.5555555556rem;
@@ -85,7 +86,7 @@
 
       .menu__link {
         align-items: center;
-        color: #6b7c93;
+        color: $grey-light;
         display: flex;
         padding: 1em;
 
@@ -111,7 +112,7 @@
   }
 
   .menu__link {
-    font-family: $header-font-family;
+    font-family: $header-font-family-alt;
     text-decoration: none;
   }
 
