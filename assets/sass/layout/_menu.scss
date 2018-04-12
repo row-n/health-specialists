@@ -61,8 +61,7 @@
 
       .menu__link {
         align-items: center;
-        // color: $white;
-        color: $grey-light;
+        color: $grey-dark;
         display: flex;
         font-size: $large-font-size;
         height: 5.5555555556rem;
@@ -86,7 +85,7 @@
 
       .menu__link {
         align-items: center;
-        color: $grey-light;
+        color: $grey;
         display: flex;
         padding: 1em;
 
@@ -104,10 +103,6 @@
       .menu__link {
         padding-right: 0;
       }
-    }
-
-    &.menu__item--has-children {
-
     }
   }
 

@@ -14,19 +14,19 @@ class Menu {
     this.events();
 
     // on resize, reset dropdown style property
-    this.updateDropdownPosition();
-    $(window).on('resize', () => {
-      if (!this.resizing) {
-        this.resizing = true;
-        if (!window.requestAnimationFrame) {
-          setTimeout(() => {
-            this.updateDropdownPosition();
-          }, 300);
-        } else {
-          window.requestAnimationFrame(this.updateDropdownPosition());
-        }
-      }
-    });
+    // this.updateDropdownPosition();
+    // $(window).on('resize', () => {
+    //   if (!this.resizing) {
+    //     this.resizing = true;
+    //     if (!window.requestAnimationFrame) {
+    //       setTimeout(() => {
+    //         this.updateDropdownPosition();
+    //       }, 300);
+    //     } else {
+    //       window.requestAnimationFrame(this.updateDropdownPosition());
+    //     }
+    //   }
+    // });
   }
 
   showDropdown(item) {
