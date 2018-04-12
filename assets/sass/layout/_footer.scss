@@ -1,6 +1,7 @@
 .footer {
   @include clearfix;
-  background-color: #111820;
+  background-color: $grey-v-dark;
+  flex-shrink: 0;
   padding-bottom: 1em;
   padding-top: 1em;
   width: 100%;
