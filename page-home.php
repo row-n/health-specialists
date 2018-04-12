@@ -12,15 +12,15 @@
   <?php the_content(); ?>
 
   <?php if( have_rows('slide') ): ?>
-    <div id="carousel">
+    <div id="carousel" data-0="opacity: 1;" data-700="opacity: 0;">
       <?php while( have_rows('slide') ): the_row();
         $image = get_sub_field('image');
         $heading = get_sub_field('heading');
         $subheading = get_sub_field('sub_heading');
         $link = get_sub_field('link'); ?>
-        <div class="slick-item" style="background-image: url(<?php echo $image['url']; ?>);">
+        <div class="slick-item" data-0="background-size: 100%;" data-700="background-size: 105%;" style="background-image: url(<?php echo $image['url']; ?>);">
           <div class="slick-content container">
-            <div class="slick-caption">
+            <div class="slick-caption" data-0="opacity: 1;" data-300="opacity: 0;">
               <?php if($heading): ?>
                 <h1><?php echo trim($heading); ?></h1>
               <?php endif; ?>
