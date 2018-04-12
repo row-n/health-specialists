@@ -13,6 +13,8 @@ class Carousel {
       fade: options.fade,
       infinite: options.infinite,
       mobileFirst: options.mobileFirst,
+      pauseOnFocus: options.pauseOnFocus,
+      pauseOnHover: options.pauseOnHover,
       speed: options.speed,
     });
   }
@@ -25,6 +27,8 @@ Carousel.DEFAULTS = {
   fade: true,
   infinite: true,
   mobileFirst: true,
+  pauseOnFocus: false,
+  pauseOnHover: false,
   speed: 500,
 };
 
