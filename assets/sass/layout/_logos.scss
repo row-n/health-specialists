@@ -6,13 +6,15 @@
   margin-top: 2em;
 
   .logos__item {
-    height: 8em;
+    height: 4.7222222222em;
     position: relative;
-    width: 17em;
+    width: 10em;
   }
 
   .logos__image {
     left: 50%;
+    max-height: 100%;
+    max-width: 100%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
