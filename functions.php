@@ -39,7 +39,7 @@ function nav_menu_item_icons( $items, $args )
     $icon = get_field('icon', $item);
 
     if( $icon ) {
-      $icon = '<span class="menu__icon fa ' . $icon . '" style="color:' . $color . '; background-color: rgba(' . $r . ',' . $g . ',' . $b . ', .2);" aria-hidden="true"></span>';
+      $icon = '<svg role="img" class="icon icon--sm"  style="color:' . $color . '; background-color: rgba(' . $r . ',' . $g . ',' . $b . ', .2);" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#' . $icon . '"></use></svg>';
       $item->title = $icon . $item->title;
     }
   }
