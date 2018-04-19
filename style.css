@@ -500,6 +500,33 @@ a {
   transition: color .3s ease;
 }
 
+.heading-shadow {
+  color: #475362;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.heading-shadow:before {
+  color: rgba(205,211,219,0.2);
+  content: attr(data-shadow-text);
+  display: block;
+  font-family: "Noto Serif",Cambria,Georgia,serif;
+  font-size: 3.94625em;
+  font-weight: 600;
+  left: -2rem;
+  line-height: 1;
+  max-width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translate(0, -40%);
+  -ms-transform: translate(0, -40%);
+  transform: translate(0, -40%);
+  white-space: nowrap;
+  z-index: -1;
+}
+
 *,*:before,*:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -536,10 +563,24 @@ body {
   width: 65em;
 }
 
+.container::before,.container::after {
+  content: ' ';
+  display: table;
+}
+
+.container::after {
+  clear: both;
+}
+
 .main {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.margin--lg {
+  margin-bottom: 6em;
+  margin-top: 6em;
 }
 
 .header {
@@ -561,6 +602,16 @@ body {
 
 .header::after {
   clear: both;
+}
+
+.header:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(71,83,98,0.5)), to(rgba(71,83,98,0)));
+  background: linear-gradient(to bottom, rgba(71,83,98,0.5), rgba(71,83,98,0));
+  content: '';
+  height: 6em;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 .brand .brand__logo {
@@ -681,7 +732,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #475362;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -689,6 +740,7 @@ body {
   height: 5.5555555556rem;
   padding-left: 1em;
   padding-right: 1em;
+  text-shadow: 0.0625em 0.0625em 0.25em rgba(71,83,98,0.5);
 }
 
 .menu .menu__list.menu__list--level-1 .menu__link:hover,.menu .menu__list.menu__list--level-1 .menu__link:active,.menu .menu__list.menu__list--level-1 .menu__link.is-active {
@@ -733,22 +785,11 @@ body {
 
 .menu .menu__icon {
   border-radius: 50%;
-  height: 2.25em;
   margin-right: 1em;
+  padding: .75em;
   position: relative;
   -webkit-transition: background-color .3s, color .3s;
   transition: background-color .3s, color .3s;
-  width: 2.25em;
-}
-
-.menu .menu__icon:before {
-  font-size: 1em;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .sub-menu {
@@ -803,6 +844,32 @@ body {
 .sub-menu .sub-menu__item {
   display: block;
   list-style: none;
+}
+
+.icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.icon.icon--sm {
+  height: 2em;
+  width: 2em;
+}
+
+.icon.icon--md {
+  height: 3em;
+  width: 3em;
+}
+
+.icon.icon--lg {
+  height: 4em;
+  width: 4em;
 }
 
 .slick-slider {
@@ -873,8 +940,6 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  margin-bottom: 2em;
-  margin-top: 2em;
 }
 
 .logos::before,.logos::after {
@@ -933,12 +998,70 @@ body {
   width: 1.5em;
 }
 
+.tiles .tiles__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.tiles .tiles__item {
+  border: 0.05556em solid #fff;
+  color: #fff;
+  height: 24em;
+  padding: 1em;
+}
+
+.tiles .tiles__item.tiles__item--sm {
+  width: 33.3%;
+}
+
+.tiles .tiles__item.tiles__item--lg {
+  width: 66.6%;
+}
+
+.tiles .tiles__item.tiles__item--blue {
+  background-color: #61d1e8;
+  color: #105d6d;
+}
+
+.tiles .tiles__item.tiles__item--green {
+  background-color: #8fdb8c;
+  color: #287625;
+}
+
+.tiles .tiles__item.tiles__item--pink {
+  background-color: #db8cb9;
+  color: #762553;
+}
+
+.tiles .tiles__item.tiles__item--orange {
+  background-color: #fcdbc3;
+  color: #e8680b;
+}
+
+.tiles .tiles__item.tiles__item--yellow {
+  background-color: #faf19a;
+  color: #bfae09;
+}
+
+.tiles .tiles__item h4 {
+  color: inherit;
+  font-family: "Noto Serif",Cambria,Georgia,serif;
+}
+
 .footer {
   background-color: #232931;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding-bottom: 1em;
-  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-top: 2em;
   width: 100%;
 }
 
