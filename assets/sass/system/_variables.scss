@@ -13,15 +13,35 @@ $grey-v-dark: darken($grey, 33.3333333334%);
 
 $blue-v-light: #61d1e8;
 $blue-light: #26c0df;
-$blue: #1990a8;
+$blue: #1990a8; // #3297d3
 $blue-dark: #105d6d;
 $blue-v-dark: #072b32;
 
 $green-v-light: #8fdb8c;
 $green-light: #5dcb58;
-$green: #3aaa35;
+$green: #3aaa35;  // #24b47e
 $green-dark: #287625;
 $green-v-dark: #174215;
+
+$orange-v-light: #fcdbc3;
+$orange-light: #f9b482;
+$orange: #f68d41;
+$orange-dark: #e8680b;
+$orange-v-dark: #a74b08;
+
+$pink-v-light: #db8cb9;
+$pink-light: #cb5899;
+$pink: #aa3577;
+$pink-dark: #762553;
+$pink-v-dark: #42152e;
+
+$yellow-v-light: #faf19a;
+$yellow-light: #f7e859;
+$yellow: #f4df18;
+$yellow-dark: #bfae09;
+$yellow-v-dark: #7e7306;
+
+$red: #da4a4d;
 // sass-lint:enable no-color-keywords
 
 // Global
