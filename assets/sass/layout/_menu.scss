@@ -61,12 +61,13 @@
 
       .menu__link {
         align-items: center;
-        color: $grey-dark;
+        color: $white;
         display: flex;
         font-size: $large-font-size;
         height: 5.5555555556rem;
         padding-left: 1em;
         padding-right: 1em;
+        text-shadow: .0625em .0625em .25em alpha($grey-dark, .5);
 
         &:hover,
         &:active,
@@ -113,19 +114,10 @@
 
   .menu__icon {
     border-radius: 50%;
-    height: 2.25em;
     margin-right: 1em;
+    padding: .75em;
     position: relative;
     transition: background-color .3s, color .3s;
-    width: 2.25em;
-
-    &:before {
-      font-size: $h5-font-size;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 }
 
