@@ -1,0 +1,25 @@
+.icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  vertical-align: middle;
+  width: 1em;
+
+  &.icon--sm {
+    height: 2em;
+    width: 2em;
+  }
+
+  &.icon--md {
+    height: 3em;
+    width: 3em;
+  }
+
+  &.icon--lg {
+    height: 4em;
+    width: 4em;
+  }
+}
