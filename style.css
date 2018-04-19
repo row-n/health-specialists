@@ -846,6 +846,13 @@ body {
   list-style: none;
 }
 
+.global-icons {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
 .icon {
   background-position: center center;
   background-repeat: no-repeat;
