@@ -10,7 +10,8 @@
     border: .05555555556em solid $white;
     color: $white;
     height: 24em;
-    padding: 1em;
+    padding: 2em;
+    position: relative;
 
     &.tiles__item--sm {
       width: 33.3%;
@@ -23,31 +24,42 @@
     &.tiles__item--blue {
       background-color: $blue-v-light;
       color: $blue-dark;
+      fill: $blue-dark;
     }
 
     &.tiles__item--green {
       background-color: $green-v-light;
       color: $green-dark;
+      fill: $green-dark;
     }
 
     &.tiles__item--pink {
       background-color: $pink-v-light;
       color: $pink-dark;
+      fill: $pink-dark;
     }
 
     &.tiles__item--orange {
       background-color: $orange-v-light;
       color: $orange-dark;
+      fill: $orange-dark;
     }
 
     &.tiles__item--yellow {
       background-color: $yellow-v-light;
       color: $yellow-dark;
+      fill: $yellow-dark;
     }
 
     h4 {
       color: inherit;
       font-family: $header-font-family;
     }
+  }
+
+  .tiles__icon {
+    bottom: 2em;
+    position: absolute;
+    right: 2em;
   }
 }
