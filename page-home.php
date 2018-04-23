@@ -85,6 +85,51 @@
     </div>
   </div>
 
+  <div id="tabs" class="tabs container">
+    <ul class="tabs__list">
+      <li class="tabs__item">
+        <a href="#tab-1">
+          <h4>Weight management</h4>
+        </a>
+      </li>
+      <li class="tabs__item">
+        <a href="#tab-2">
+          <h4>Support with weight loss surgery</h4>
+        </a>
+      </li>
+      <li class="tabs__item">
+        <a href="#tab-3">
+          <h4>Eating psychology</h4>
+        </a>
+      </li>
+      <li class="tabs__item">
+        <a href="#tab-4">
+          <h4>Exercise physiology</h4>
+        </a>
+      </li>
+      <li class="tabs__item">
+        <a href="#tab-5">
+          <h4>Food intolerances / FODMAP diets</h4>
+        </a>
+      </li>
+    </ul>
+    <div id="tab-1">
+      One
+    </div>
+    <div id="tab-2">
+      Two
+    </div>
+    <div id="tab-3">
+      Three
+    </div>
+    <div id="tab-4">
+      Four
+    </div>
+    <div id="tab-5">
+      Five
+    </div>
+  </div>
+
   <?php if( have_rows('logo') ): ?>
     <div id="logos" class="logos container margin--lg">
       <?php while( have_rows('logo') ): the_row();
