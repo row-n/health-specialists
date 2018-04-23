@@ -6,7 +6,8 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "skrollr": "^0.6.26",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tabslet": "^1.7.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -14,6 +15,7 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.18.13",
     "browserify": "^15.2.0",
+    "browserify-shim": "^3.8.14",
     "del": "^3.0.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
@@ -37,6 +39,17 @@
     "run-sequence": "^2.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "jQuery"
   },
   "scripts": {
     "start": "gulp",
