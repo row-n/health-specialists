@@ -13,12 +13,16 @@ class Tabs {
       delay: options.delay,
       mouseevent: options.mouseEvent,
     });
+
+    $element.on('show', (event, tab) => {
+      console.log(event, tab);
+    });
   }
 }
 
 Tabs.DEFAULTS = {
   active: 1,
-  animation: true,
+  animation: false,
   autoRotate: true,
   delay: 5000,
   mouseEvent: 'click',

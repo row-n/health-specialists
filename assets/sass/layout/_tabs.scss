@@ -1,0 +1,121 @@
+.tabs {
+  margin-top: 4em;
+
+  .tabs__list {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+    position: relative;
+  }
+
+  .tabs__item {
+    @include active-tab-item(1, $pink-v-light);
+    @include active-tab-item(2, $blue-v-light);
+    @include active-tab-item(3, $orange-v-light);
+    @include active-tab-item(4, $green-v-light);
+    @include active-tab-item(5, $yellow-v-light);
+    color: $grey;
+    fill: $grey;
+    text-align: center;
+    width: 20%;
+
+    &:last-child {
+      &:after {
+        bottom: -.0625em;
+        content: '';
+        display: block;
+        height: .125em;
+        left: 0;
+        position: absolute;
+        transition: left .4s ease;
+      }
+    }
+
+    &.active {
+      &.tabs__item--blue {
+        color: $blue;
+        fill: $blue;
+
+        .tabs__icon {
+          background-color: alpha($blue, .1);
+        }
+      }
+
+      &.tabs__item--green {
+        color: $green;
+        fill: $green;
+
+        .tabs__icon {
+          background-color: alpha($green, .1);
+        }
+      }
+
+      &.tabs__item--pink {
+        color: $pink;
+        fill: $pink;
+
+        .tabs__icon {
+          background-color: alpha($pink, .1);
+        }
+      }
+
+      &.tabs__item--orange {
+        color: $orange;
+        fill: $orange;
+
+        .tabs__icon {
+          background-color: alpha($orange, .1);
+        }
+      }
+
+      &.tabs__item--yellow {
+        color: $yellow;
+        fill: $yellow;
+
+        .tabs__icon {
+          background-color: alpha($yellow, .1);
+        }
+      }
+    }
+  }
+
+  .tabs__link {
+    display: block;
+    padding: 1.5em;
+    text-decoration: none;
+
+    &:hover {
+      .tabs__icon {
+        animation: bounce .4s;
+      }
+    }
+
+    > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tabs__icon {
+    background-color: alpha($grey, .1);
+    border-radius: 50%;
+    display: inline-flex;
+    margin-bottom: 1.5em;
+    padding: 1em;
+    position: relative;
+    transition: background-color .3s, color .3s;
+  }
+
+  .tabs__content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
+  }
+
+  .tabs__copy {
+    margin-left: 2em;
+  }
+}

@@ -39,7 +39,7 @@
     </div>
   <?php endif; ?>
 
-  <div class="tiles container margin--lg">
+  <!-- <div class="tiles container margin--lg">
     <h2 class="heading-shadow" data-shadow-text="Services">What we do</h2>
     <div class="tiles__list">
       <div class="tiles__item tiles__item--sm tiles__item--green">
@@ -58,55 +58,105 @@
         <h4>Food intolerances / FODMAP diets</h4>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div id="tabs" class="tabs container">
-    <ul class="tabs__list">
-      <li class="tabs__item">
-        <a href="#tab-1">
-          <h4>Weight management</h4>
-        </a>
-      </li>
-      <li class="tabs__item">
-        <a href="#tab-2">
-          <h4>Support with weight loss surgery</h4>
-        </a>
-      </li>
-      <li class="tabs__item">
-        <a href="#tab-3">
-          <h4>Eating psychology</h4>
-        </a>
-      </li>
-      <li class="tabs__item">
-        <a href="#tab-4">
-          <h4>Exercise physiology</h4>
-        </a>
-      </li>
-      <li class="tabs__item">
-        <a href="#tab-5">
-          <h4>Food intolerances / FODMAP diets</h4>
-        </a>
-      </li>
-    </ul>
-    <div id="tab-1">
-      One
-    </div>
-    <div id="tab-2">
-      Two
-    </div>
-    <div id="tab-3">
-      Three
-    </div>
-    <div id="tab-4">
-      Four
-    </div>
-    <div id="tab-5">
-      Five
+  <div class="container margin--lg">
+    <h2 class="heading-shadow" data-shadow-text="Services">What we do</h2>
+    <div id="tabs" class="tabs">
+      <ul class="tabs__list">
+        <li class="tabs__item tabs__item--pink">
+          <a href="#tab-1" class="tabs__link">
+            <span class="tabs__icon">
+              <svg role="img" class="icon icon--md"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#scale-1"></use></svg>
+            </span>
+            <h5>Weight management</h5>
+          </a>
+        </li>
+        <li class="tabs__item tabs__item--blue">
+          <a href="#tab-2" class="tabs__link">
+            <span class="tabs__icon">
+              <svg role="img" class="icon icon--md"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#diet"></use></svg>
+            </span>
+            <h5>Support with weight loss surgery</h5>
+          </a>
+        </li>
+        <li class="tabs__item tabs__item--orange">
+          <a href="#tab-3" class="tabs__link">
+            <span class="tabs__icon">
+              <svg role="img" class="icon icon--md"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cutlery-dish"></use></svg>
+            </span>
+            <h5>Eating psychology</h5>
+          </a>
+        </li>
+        <li class="tabs__item tabs__item--green">
+          <a href="#tab-4" class="tabs__link">
+            <span class="tabs__icon">
+              <svg role="img" class="icon icon--md"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bike-person"></use></svg>
+            </span>
+            <h5>Exercise physiology</h5>
+          </a>
+        </li>
+        <li class="tabs__item tabs__item--yellow">
+          <a href="#tab-5" class="tabs__link">
+            <span class="tabs__icon">
+              <svg role="img" class="icon icon--md"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#onion-1"></use></svg>
+            </span>
+            <h5>Food intolerances / FODMAP diets</h5>
+          </a>
+        </li>
+      </ul>
+      <div id="tab-1" class="tabs__content">
+        <img src="http://placehold.it/500x350" alt="" class="tabs__img" />
+        <div class="tabs__copy">
+          <h4>One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum pellentesque porta.</p>
+          <p>Vestibulum congue placerat diam, quis consectetur metus. Vivamus faucibus a orci ut maximus. Curabitur facilisis est id nisi vehicula, et dignissim magna mattis.</p>
+          <p>Etiam ullamcorper bibendum leo, vel interdum lectus placerat in. Integer rhoncus nibh id felis blandit tempor.</p>
+        </div>
+      </div>
+      <div id="tab-2" class="tabs__content">
+        <img src="http://placehold.it/500x350" alt="" class="tabs__img" />
+        <div class="tabs__copy">
+          <h4>Two</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum pellentesque porta.</p>
+          <p>Vestibulum congue placerat diam, quis consectetur metus. Vivamus faucibus a orci ut maximus. Curabitur facilisis est id nisi vehicula, et dignissim magna mattis.</p>
+          <p>Etiam ullamcorper bibendum leo, vel interdum lectus placerat in. Integer rhoncus nibh id felis blandit tempor.</p>
+        </div>
+      </div>
+      <div id="tab-3" class="tabs__content">
+        <img src="http://placehold.it/500x350" alt="" class="tabs__img" />
+        <div class="tabs__copy">
+          <h4>Three</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum pellentesque porta.</p>
+          <p>Vestibulum congue placerat diam, quis consectetur metus. Vivamus faucibus a orci ut maximus. Curabitur facilisis est id nisi vehicula, et dignissim magna mattis.</p>
+          <p>Etiam ullamcorper bibendum leo, vel interdum lectus placerat in. Integer rhoncus nibh id felis blandit tempor.</p>
+        </div>
+      </div>
+      <div id="tab-4" class="tabs__content">
+        <img src="http://placehold.it/500x350" alt="" class="tabs__img" />
+        <div class="tabs__copy">
+          <h4>Four</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum pellentesque porta.</p>
+          <p>Vestibulum congue placerat diam, quis consectetur metus. Vivamus faucibus a orci ut maximus. Curabitur facilisis est id nisi vehicula, et dignissim magna mattis.</p>
+          <p>Etiam ullamcorper bibendum leo, vel interdum lectus placerat in. Integer rhoncus nibh id felis blandit tempor.</p>
+        </div>
+      </div>
+      <div id="tab-5" class="tabs__content">
+        <img src="http://placehold.it/500x350" alt="" class="tabs__img" />
+        <div class="tabs__copy">
+          <h4>Five</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum pellentesque porta.</p>
+          <p>Vestibulum congue placerat diam, quis consectetur metus. Vivamus faucibus a orci ut maximus. Curabitur facilisis est id nisi vehicula, et dignissim magna mattis.</p>
+          <p>Etiam ullamcorper bibendum leo, vel interdum lectus placerat in. Integer rhoncus nibh id felis blandit tempor.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <?php if( have_rows('logo') ): ?>
-    <div id="logos" class="logos container margin--lg">
+    <div class="container margin--lg">
+    <h2 class="heading-shadow" data-shadow-text="Affiliates">Trusted partners</h2>
+    <div id="logos" class="logos">
       <?php while( have_rows('logo') ): the_row();
         $image = get_sub_field('image'); ?>
           <?php if($image): ?>
