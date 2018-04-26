@@ -12,7 +12,7 @@
   <?php the_content(); ?>
 
   <?php if( have_rows('slide') ): ?>
-    <div id="carousel" data-0="opacity: 1;" data-700="opacity: .5;">
+    <div id="carousel">
       <?php while( have_rows('slide') ): the_row();
         $image = get_sub_field('image');
         $heading = get_sub_field('heading');
@@ -42,20 +42,45 @@
   <!-- <div class="tiles container margin--lg">
     <h2 class="heading-shadow" data-shadow-text="Services">What we do</h2>
     <div class="tiles__list">
-      <div class="tiles__item tiles__item--sm tiles__item--green">
+      <div class="tiles__item tiles__item--sm tiles__item--blue">
         <h4>Weight management</h4>
+        <div class="tiles__icon">
+          <svg role="img" class="icon icon--lg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#scale-2"></use>
+          </svg>
+        </div>
       </div>
-      <div class="tiles__item tiles__item--lg tiles__item--green">
+      <div class="tiles__item tiles__item--lg tiles__item--blue">
         <h4>Support with weight loss surgery</h4>
+        <div class="tiles__icon">
+          <svg role="img" class="icon icon--lg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#diet"></use>
+          </svg>
+        </div>
       </div>
-      <div class="tiles__item tiles__item--sm tiles__item--green">
+      <div class="tiles__item tiles__item--sm tiles__item--blue">
         <h4>Eating psychology</h4>
+        <div class="tiles__icon">
+          <svg role="img" class="icon icon--lg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cutlery-dish"></use>
+          </svg>
+        </div>
       </div>
-      <div class="tiles__item tiles__item--sm tiles__item--green">
+      <div class="tiles__item tiles__item--sm tiles__item--blue">
         <h4>Exercise physiology</h4>
+        <div class="tiles__icon">
+          <svg role="img" class="icon icon--lg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bike-person"></use>
+          </svg>
+        </div>
       </div>
-      <div class="tiles__item tiles__item--sm tiles__item--green">
+      <div class="tiles__item tiles__item--sm tiles__item--blue">
         <h4>Food intolerances / FODMAP diets</h4>
+        <div class="tiles__icon">
+          <svg role="img" class="icon icon--lg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#onion-1"></use>
+          </svg>
+        </div>
       </div>
     </div>
   </div> -->

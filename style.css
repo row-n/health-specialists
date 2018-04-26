@@ -1297,7 +1297,8 @@ body {
   border: 0.05556em solid #fff;
   color: #fff;
   height: 24em;
-  padding: 1em;
+  padding: 2em;
+  position: relative;
 }
 
 .tiles .tiles__item.tiles__item--sm {
@@ -1311,31 +1312,42 @@ body {
 .tiles .tiles__item.tiles__item--blue {
   background-color: #61d1e8;
   color: #105d6d;
+  fill: #105d6d;
 }
 
 .tiles .tiles__item.tiles__item--green {
   background-color: #8fdb8c;
   color: #287625;
+  fill: #287625;
 }
 
 .tiles .tiles__item.tiles__item--pink {
   background-color: #db8cb9;
   color: #762553;
+  fill: #762553;
 }
 
 .tiles .tiles__item.tiles__item--orange {
   background-color: #fcdbc3;
   color: #e8680b;
+  fill: #e8680b;
 }
 
 .tiles .tiles__item.tiles__item--yellow {
   background-color: #faf19a;
   color: #bfae09;
+  fill: #bfae09;
 }
 
 .tiles .tiles__item h4 {
   color: inherit;
   font-family: "Noto Serif",Cambria,Georgia,serif;
+}
+
+.tiles .tiles__icon {
+  bottom: 2em;
+  position: absolute;
+  right: 2em;
 }
 
 .footer {
