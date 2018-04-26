@@ -104,10 +104,12 @@ gulp.task('browser-sync', () => {
     './*.php',
   ];
 
-  $.browserSync.init(files, {
-    proxy: 'http://healthspecialists.develop',
+  $.browserSync.create('server');
+
+  $.browserSync.get('server').init(files, {
     host: 'healthspecialists.develop',
-    open: 'external',
+    port: 1234,
+    proxy: 'http://healthspecialists.develop',
   });
 
   gulp.watch('./assets/sass/**/*.s+(a|c)ss', ['styles', () => {
