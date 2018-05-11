@@ -3,10 +3,12 @@ import skrollr from 'skrollr';
 
 import './plugins/carousel';
 import './plugins/menu';
-import './plugins/tabs';
+// import './plugins/tabs';
+import './plugins/tiles';
 
 $('#carousel').Carousel();
 $('#header').Menu();
-$('#tabs').Tabs();
+// $('#tabs').Tabs();
+$('#tiles').Tiles();
 
 skrollr.init();
