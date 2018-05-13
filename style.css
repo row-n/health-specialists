@@ -512,7 +512,7 @@ a {
   content: attr(data-shadow-text);
   display: block;
   font-family: "Noto Serif",Cambria,Georgia,serif;
-  font-size: 3.94625em;
+  font-size: 3.157em;
   font-weight: 600;
   left: -2rem;
   line-height: 1;
@@ -1290,23 +1290,30 @@ body {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  padding: .5em;
   position: relative;
+}
+
+.tiles .tiles__wrapper {
+  -webkit-transition: width .2s;
+  transition: width .2s;
+  width: 20%;
+}
+
+.tiles .tiles__wrapper.not-hovered {
+  width: 17.85%;
+}
+
+.tiles .tiles__wrapper:hover {
+  width: 28.6%;
 }
 
 .tiles .tiles__item {
-  border: 0.05556em solid #fff;
   color: #fff;
   height: 24em;
+  margin: .5em;
   padding: 2em;
   position: relative;
-}
-
-.tiles .tiles__item.tiles__item--sm {
-  width: 33.3%;
-}
-
-.tiles .tiles__item.tiles__item--lg {
-  width: 66.6%;
 }
 
 .tiles .tiles__item.tiles__item--blue {

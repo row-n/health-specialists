@@ -61,7 +61,7 @@ a {
     content: attr(data-shadow-text);
     display: block;
     font-family: $header-font-family;
-    font-size: ($h1-font-size * 1.25);
+    font-size: $h1-font-size;
     font-weight: 600;
     left: -2rem;
     line-height: 1;

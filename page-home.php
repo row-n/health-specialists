@@ -39,53 +39,65 @@
     </div>
   <?php endif; ?>
 
-  <!-- <div class="tiles container margin--lg">
-    <h2 class="heading-shadow" data-shadow-text="Services">What we do</h2>
+  <div id="tiles" class="tiles margin--lg">
+    <div class="container">
+      <h2 class="heading-shadow" data-shadow-text="Services">What we do</h2>
+    </div>
     <div class="tiles__list">
-      <div class="tiles__item tiles__item--sm tiles__item--blue">
-        <h4>Weight management</h4>
-        <div class="tiles__icon">
-          <svg role="img" class="icon icon--lg">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#scale-2"></use>
-          </svg>
+      <div class="tiles__wrapper">
+        <div class="tiles__item tiles__item--pink">
+          <h4>Weight management</h4>
+          <div class="tiles__icon">
+            <svg role="img" class="icon icon--lg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#scale-2"></use>
+            </svg>
+          </div>
         </div>
       </div>
-      <div class="tiles__item tiles__item--lg tiles__item--blue">
-        <h4>Support with weight loss surgery</h4>
-        <div class="tiles__icon">
-          <svg role="img" class="icon icon--lg">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#diet"></use>
-          </svg>
+      <div class="tiles__wrapper">
+        <div class="tiles__item tiles__item--blue">
+          <h4>Support with weight loss surgery</h4>
+          <div class="tiles__icon">
+            <svg role="img" class="icon icon--lg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#diet"></use>
+            </svg>
+          </div>
         </div>
       </div>
-      <div class="tiles__item tiles__item--sm tiles__item--blue">
-        <h4>Eating psychology</h4>
-        <div class="tiles__icon">
-          <svg role="img" class="icon icon--lg">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cutlery-dish"></use>
-          </svg>
+      <div class="tiles__wrapper">
+        <div class="tiles__item tiles__item--orange">
+          <h4>Eating psychology</h4>
+          <div class="tiles__icon">
+            <svg role="img" class="icon icon--lg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cutlery-dish"></use>
+            </svg>
+          </div>
         </div>
       </div>
-      <div class="tiles__item tiles__item--sm tiles__item--blue">
-        <h4>Exercise physiology</h4>
-        <div class="tiles__icon">
-          <svg role="img" class="icon icon--lg">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bike-person"></use>
-          </svg>
+      <div class="tiles__wrapper">
+        <div class="tiles__item tiles__item--green">
+          <h4>Exercise physiology</h4>
+          <div class="tiles__icon">
+            <svg role="img" class="icon icon--lg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bike-person"></use>
+            </svg>
+          </div>
         </div>
       </div>
-      <div class="tiles__item tiles__item--sm tiles__item--blue">
-        <h4>Food intolerances / FODMAP diets</h4>
-        <div class="tiles__icon">
-          <svg role="img" class="icon icon--lg">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#onion-1"></use>
-          </svg>
+      <div class="tiles__wrapper">
+        <div class="tiles__item tiles__item--yellow">
+          <h4>Food intolerances / FODMAP diets</h4>
+          <div class="tiles__icon">
+            <svg role="img" class="icon icon--lg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#onion-1"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
-  <div class="container margin--lg">
+  <!-- <div class="container margin--lg">
     <h2 class="heading-shadow" data-shadow-text="Services">What we do</h2>
     <div id="tabs" class="tabs">
       <ul class="tabs__list">
@@ -176,7 +188,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <?php if( have_rows('logo') ): ?>
     <div class="container margin--lg">
