@@ -108,6 +108,7 @@ gulp.task('browser-sync', () => {
 
   $.browserSync.get('server').init(files, {
     host: 'healthspecialists.develop',
+    open: 'external',
     port: 1234,
     proxy: 'http://healthspecialists.develop',
   });
